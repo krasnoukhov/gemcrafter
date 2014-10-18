@@ -49,3 +49,88 @@ body {
   height: 1370px;
   background: url(/images/bg-top.png) no-repeat center top;
 }
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 615px;
+  width: 800px;
+  margin-left: -400px;
+  text-align: center;
+}
+
+.video {
+  margin: 0 0 20px 0;
+}
+
+p {
+  position: relative;
+  margin: 20px 0;
+  color: #b2b0a7;
+  font-family: "Arial";
+  font-size: 26px;
+  text-shadow: 0 2px 2px #000;
+}
+
+p a {
+  color: #d5a74e;
+}
+
+p a:hover {
+  text-decoration: none;
+}
+
+.store-buttons {
+  position: relative;
+  margin: 20px 0 940px 0;
+}
+
+.store-buttons a {
+  padding-right: 40px;
+}
+
+.store-buttons a:last-child {
+  padding-right: 0;
+}
+
+.gallery {
+  position: absolute;
+  left: 50%;
+  top: 675px;
+  width: 800px;
+  margin-left: -400px;
+  height: 1064px;
+  background: url(/images/bg-gallery.png) no-repeat center top;
+}
+
+.social-buttons {
+  margin: 40px 0;
+}
+
+.social-buttons a {
+  padding-right: 15px;
+}
+
+.social-buttons a:last-child {
+  padding-right: 0;
+}
+
+
+p.small {
+  font-size: 18px;
+  color: #352523;
+  text-shadow: none;
+}
+
+p.small a {
+  color: #352523;
+}
+
+p.small span {
+  padding: 0 10px;
+}
+
+p.small:last-child {
+  padding: 0;
+  margin: 20px 0 0 0;
+}
