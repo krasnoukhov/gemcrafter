@@ -103,6 +103,63 @@ p a:hover {
   background: url(/images/bg-gallery.png) no-repeat center top;
 }
 
+.gallery .left, .gallery .right {
+  display: block;
+  position: absolute;
+  top: 567px;
+  width: 51px;
+  height: 74px;
+}
+
+.gallery .left {
+  left: 120px;
+  background: url(/images/btn-left.png) no-repeat center top;
+}
+
+.gallery .left.active {
+  background: url(/images/btn-left-active.png) no-repeat center top;
+}
+
+.gallery .right {
+  right: 120px;
+  background: url(/images/btn-right.png) no-repeat center top;
+}
+
+.gallery .right.active {
+  background: url(/images/btn-right-active.png) no-repeat center top;
+}
+
+.gallery .screen {
+  position: absolute;
+  left: 195px;
+  top: 240px;
+  width: 410px;
+  height: 728px;
+  overflow: hidden;
+}
+
+.gallery .screen ul {
+  position: relative;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  width: 2050px;
+
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translateZ(0);
+}
+
+.gallery .screen ul li {
+  padding: 0;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
 .social-buttons {
   margin: 40px 0;
 }
@@ -114,7 +171,6 @@ p a:hover {
 .social-buttons a:last-child {
   padding-right: 0;
 }
-
 
 p.small {
   font-size: 18px;

@@ -1,3 +1,7 @@
+/*
+ * Parallax
+ */
+
 var limit = 315;
 var offsets = {
   "head": 80,
@@ -29,3 +33,50 @@ $(window).on("scroll", function() {
 });
 
 parallax(Math.min(window.scrollY, limit));
+
+/*
+ * Gallery
+ */
+
+$(function() {
+  var totalWidth = $(".gallery ul").width();
+  var screenWidth = $(".gallery .screen").width();
+
+  var moveSlide = function(nextLeft) {
+    $(".gallery ul").css("left", nextLeft+"px");
+
+    if(nextLeft == 0) {
+      $(".gallery .left").removeClass("active");
+    }else{
+      $(".gallery .left").addClass("active");
+    }
+
+    if(nextLeft == -(totalWidth - screenWidth)) {
+      $(".gallery .right").removeClass("active");
+    }else{
+      $(".gallery .right").addClass("active");
+    }
+  }
+
+  $(".gallery .left").on("click", function() {
+    var currentLeft = parseInt($(".gallery ul").css("left"));
+    var nextLeft = currentLeft + screenWidth;
+    if(currentLeft % screenWidth == 0) {
+      if(nextLeft <= 0) {
+        moveSlide(nextLeft);
+      }
+    }
+    return false;
+  });
+
+  $(".gallery .right").on("click", function() {
+    var currentLeft = parseInt($(".gallery ul").css("left"));
+    var nextLeft = currentLeft - screenWidth;
+    if(currentLeft % screenWidth == 0) {
+      if(nextLeft > -totalWidth) {
+        moveSlide(nextLeft);
+      }
+    }
+    return false;
+  });
+})
