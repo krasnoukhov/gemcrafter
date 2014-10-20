@@ -8,21 +8,11 @@ var offsets = {
   "fog": 210
 };
 
-if (!window.requestAnimationFrame) {
-  window.requestAnimationFrame = function(fn) { fn() }
-};
-
 var parallax = function(offset) {
   for(var layer in offsets) {
-    var top = Math.round(offsets[layer]*(offset/limit));
-    frame(layer, offset, top)
+    var top = offset-Math.round(offsets[layer]*(offset/limit));
+    $(".bg-"+layer).css("transform", "translate3d(0,"+top+"px,0)");
   }
-};
-
-var frame = function(layer, offset, top) {
-  requestAnimationFrame(function() {
-    $(".bg-"+layer).css("top", (offset-top)+"px");
-  });
 };
 
 $(window).on("scroll", function() {
