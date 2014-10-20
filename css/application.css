@@ -70,6 +70,7 @@ p {
   font-family: "Arial";
   font-size: 26px;
   text-shadow: 0 2px 2px #000;
+  line-height: 33px;
 }
 
 p a {
@@ -111,22 +112,22 @@ p a:hover {
   height: 74px;
 }
 
-.gallery .left {
-  left: 120px;
+.gallery .left.active {
   background: url(/images/btn-left.png) no-repeat center top;
 }
 
-.gallery .left.active {
-  background: url(/images/btn-left-active.png) no-repeat center top;
-}
-
-.gallery .right {
-  right: 120px;
-  background: url(/images/btn-right.png) no-repeat center top;
+.gallery .left, .gallery .left:active {
+  left: 120px;
+  background: url(/images/btn-left-pressed.png) no-repeat center top;
 }
 
 .gallery .right.active {
-  background: url(/images/btn-right-active.png) no-repeat center top;
+  background: url(/images/btn-right.png) no-repeat center top;
+}
+
+.gallery .right, .gallery .right:active {
+  right: 120px;
+  background: url(/images/btn-right-pressed.png) no-repeat center top;
 }
 
 .gallery .screen {
@@ -161,7 +162,7 @@ p a:hover {
 }
 
 .social-buttons {
-  margin: 40px 0;
+  margin: 25px 0 20px 0;
 }
 
 .social-buttons a {
