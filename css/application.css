@@ -181,3 +181,14 @@ p.small:last-child {
   padding: 0;
   margin: 20px 0 0 0;
 }
+
+@media (width: 980px) {
+  .content {
+    width: 960px;
+    margin-left: -480px;
+  }
+
+  .gallery {
+    top: 625px;
+  }
+}
