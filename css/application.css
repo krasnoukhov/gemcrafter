@@ -188,7 +188,11 @@ p.small:last-child {
     margin-left: -480px;
   }
 
+  p {
+    font-size: 32px;
+  }
+
   .gallery {
-    top: 625px;
+    top: 690px;
   }
 }
