@@ -1,4 +1,12 @@
 /*
+ * Android
+ */
+
+if(navigator.userAgent.indexOf("Android") >= 0) {
+  $("[data-play-store]").attr("href", "market://details?id=com.playmous.gemcrafter")
+}
+
+/*
  * Parallax
  */
 
