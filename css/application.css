@@ -150,7 +150,11 @@ p a:hover {
 }
 
 .gallery.fullscreen .screen {
-  margin: 30px auto 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -364px;
+  margin-left: -205px;
 }
 
 @media  only screen and (-webkit-min-device-pixel-ratio: 1.5),
