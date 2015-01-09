@@ -94,12 +94,29 @@ p a:hover {
   background: url(/images/bg-gallery.png) no-repeat center top;
 }
 
+.gallery.fullscreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-left: 0;
+  height: 100%;
+  background: #a6afa9;
+  z-index: 999;
+}
+
 .gallery .left, .gallery .right {
   display: block;
   position: absolute;
   top: 567px;
   width: 51px;
   height: 74px;
+}
+
+.gallery.fullscreen .left, .gallery.fullscreen .right {
+  display: none;
 }
 
 .gallery .left.active {
@@ -121,12 +138,40 @@ p a:hover {
 }
 
 .gallery .screen {
+  overflow: hidden;
+  width: 410px;
+  height: 728px;
+}
+
+.gallery.inline .screen {
   position: absolute;
   left: 195px;
   top: 240px;
-  width: 410px;
-  height: 728px;
-  overflow: hidden;
+}
+
+.gallery.fullscreen .screen {
+  margin: 30px auto 0 auto;
+}
+
+@media  only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (   min--moz-device-pixel-ratio: 1.5),
+        only screen and (     -o-min-device-pixel-ratio: 3/2),
+        only screen and (        min-device-pixel-ratio: 1.5),
+        only screen and (min-resolution: 192dpi) {
+  .gallery.fullscreen .screen {
+    zoom: 200%;
+  }
+}
+
+@media  only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (   min--moz-device-pixel-ratio: 1.5),
+        only screen and (     -o-min-device-pixel-ratio: 3/2),
+        only screen and (        min-device-pixel-ratio: 1.5),
+        only screen and (min-resolution: 192dpi),
+        only screen and (max-height: 480px) {
+  .gallery.fullscreen .screen {
+    zoom: 170%;
+  }
 }
 
 .gallery .screen ul {

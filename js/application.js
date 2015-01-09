@@ -37,11 +37,14 @@ parallax(Math.min(window.scrollY, limit));
  */
 
 $(function() {
+  var isTouchDevice = "ontouchstart" in document.documentElement;
   var totalWidth = $(".gallery ul").width();
   var screenWidth = $(".gallery .screen").width();
+  $(".gallery ul").data("currentLeft", 0);
 
   var moveSlide = function(nextLeft) {
     $(".gallery ul").css("left", nextLeft+"px");
+    $(".gallery ul").data("currentLeft", nextLeft);
 
     if(nextLeft == 0) {
       $(".gallery .left").removeClass("active");
@@ -57,7 +60,7 @@ $(function() {
   }
 
   $(".gallery .left").on("click", function() {
-    var currentLeft = parseInt($(".gallery ul").css("left"));
+    var currentLeft = $(".gallery ul").data("currentLeft");
     var nextLeft = currentLeft + screenWidth;
     if(currentLeft % screenWidth == 0) {
       if(nextLeft <= 0) {
@@ -68,7 +71,7 @@ $(function() {
   });
 
   $(".gallery .right").on("click", function() {
-    var currentLeft = parseInt($(".gallery ul").css("left"));
+    var currentLeft = $(".gallery ul").data("currentLeft");
     var nextLeft = currentLeft - screenWidth;
     if(currentLeft % screenWidth == 0) {
       if(nextLeft > -totalWidth) {
@@ -76,5 +79,19 @@ $(function() {
       }
     }
     return false;
+  });
+
+  /* Mobile */
+  $(".gallery").swipe({
+    tap: function() {
+      if (!isTouchDevice) return false;
+      $(".gallery").toggleClass("fullscreen").toggleClass("inline");
+    },
+    swipeRight: function() {
+      $(".gallery .left").trigger("click");
+    },
+    swipeLeft: function() {
+      $(".gallery .right").trigger("click");
+    }
   });
 })
