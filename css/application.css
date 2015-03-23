@@ -77,11 +77,16 @@ p a:hover {
 }
 
 .store-buttons a {
-  padding-right: 40px;
+  padding-right: 15px;
 }
 
 .store-buttons a:last-child {
   padding-right: 0;
+}
+
+.store-buttons a img {
+  width: auto;
+  height: 65px;
 }
 
 .gallery {
